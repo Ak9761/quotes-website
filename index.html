@@ -5,8 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quotes website</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #tweetme{
+            justify-content: center;
+            padding-top: 10%;
+        }
+        #tweetme p{
+            font-size: 25px;
+            padding: 0;
+        }
+        #nquotes{
+            align-items: center;
+            justify-content: center;
+        }
+        #quotes{
+            font-size: 50px;
+        }
+        #author{
+            font-size: 50px;
+        }
+        #nquotes{
+            font-size: 25px;
+            border-radius: 15px;
+            background-color: forestgreen
+        }
+    </style>
 </head>
 <body>
+    <div id="tweetme"><img src="icon.png" height="100" width="100">
+    <p>Tweet me</p>
+    </div>
     <div id="quotes"></div>
     <div id="author"></div>
     <button id="nquotes">New Quote</button>
@@ -15,11 +49,18 @@
         const quotes = document.getElementById("quotes")
         const author = document.getElementById('author')
         const newquotes = document.getElementById('nquotes')
+        const tweetMe = document.getElementById('tweetme')
         let realdata = ''
+
+        const tweetnow = () =>{
+            let tweet = `https://twitter.com/intent/tweet?text=${quotesdata}`
+            window.open(tweet)
+        }
         
         const getnewquotes= ()=>{
             let rnum= Math.floor(Math.random() * 10)
             console.log(realdata[rnum].text);
+            quotesdata = realdata[rnum].text
             quotes.innerText = `${realdata[rnum].text}`
             author.innerText = `${realdata[rnum].author}`
         }
@@ -33,6 +74,7 @@
                 // console.log(realdata[0].author)
             } catch (error){}
         }
+        tweetme.addEventListener('click', tweetnow)
         newquotes.addEventListener('click', getnewquotes)
         getquotes()
     </script>
