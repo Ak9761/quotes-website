@@ -24,11 +24,6 @@
             padding: 0;
         }
 
-        #nquotes {
-            align-items: center;
-            justify-content: center;
-        }
-
         #quotes {
             font-size: 50px;
         }
@@ -38,6 +33,55 @@
         }
 
         #nquotes {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+        border-radius: 15px;
+        background-color: #4CAF50;
+        /* Green background */
+        border: none;
+        /* Remove border */
+        color: white;
+        /* White text */
+        padding: 15px 32px;
+        /* Add padding */
+        text-align: center;
+        /* Center text */
+        text-decoration: none;
+        /* Remove underline */
+        display: inline-block;
+        /* Make it a block element */
+        margin: 20px;
+        /* Add margin */
+        cursor: pointer;
+        /* Change cursor on hover */
+    }
+
+    #quotes {
+        font-size: 50px;
+    }
+
+    #author {
+        font-size: 50px;
+    }
+
+    @media (max-width:700px) {
+        #quotes {
+            font-size: 25px;
+        }
+
+        #author {
+            font-size: 20px;
+            padding-left: 50%;
+            padding-top: 1%;
+            padding-bottom: 15%;
+        }
+
+        #nquotes {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             font-size: 25px;
             border-radius: 15px;
             background-color: #4CAF50;
@@ -54,13 +98,12 @@
             /* Remove underline */
             display: inline-block;
             /* Make it a block element */
-            font-size: 16px;
-            /* Set font size */
             margin: 20px;
             /* Add margin */
             cursor: pointer;
             /* Change cursor on hover */
         }
+    }
 
         @media (max-width:700px) {
             #quotes {
@@ -76,25 +119,15 @@
 
             #nquotes {
                 background-color: #4CAF50;
-                /* Green background */
                 border: none;
-                /* Remove border */
                 color: white;
-                /* White text */
                 padding: 15px 32px;
-                /* Add padding */
                 text-align: center;
-                /* Center text */
                 text-decoration: none;
-                /* Remove underline */
                 display: inline-block;
-                /* Make it a block element */
                 font-size: 16px;
-                /* Set font size */
                 margin: 20px;
-                /* Add margin */
                 cursor: pointer;
-                /* Change cursor on hover */
             }
         }
     </style>
